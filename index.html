@@ -1,0 +1,557 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Países del Mundo</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333333;
+            background-color: #eeeeea;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 25px;
+            text-align: center;
+            color: white;
+            background-color: #315943;
+        }
+
+        nav {
+            padding: 12px;
+            text-align: center;
+            background-color: white;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        nav a {
+            display: inline-block;
+            margin: 4px;
+            padding: 8px 12px;
+            color: #315943;
+            background-color: #f3f3ed;
+            text-decoration: none;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            color: white;
+            background-color: #315943;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 25px auto;
+            padding: 0 18px;
+        }
+
+        section {
+            margin-bottom: 25px;
+            padding: 25px;
+            background-color: white;
+            border-radius: 8px;
+            scroll-margin-top: 15px;
+        }
+
+        h2, h3 {
+            color: #315943;
+        }
+
+        .paises {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .pais-card {
+            padding: 15px;
+            text-align: center;
+            background-color: #f3f3ed;
+            border: 1px solid #dddddd;
+            border-radius: 6px;
+        }
+
+        .pais-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .imagen-continente {
+            width: 350px;
+            max-width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .boton {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 8px 12px;
+            color: white;
+            background-color: #315943;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .datos, .noticias {
+            margin-top: 20px;
+            padding: 18px;
+            background-color: #f3f3ed;
+            border-radius: 6px;
+        }
+
+        .tabla-scroll {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            min-width: 550px;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #777777;
+        }
+
+        thead th {
+            color: white;
+            background-color: #315943;
+        }
+
+        .lista-noticias a {
+            display: block;
+            margin: 8px 0;
+            color: #174d84;
+            text-decoration: none;
+        }
+
+        .lista-noticias a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            padding: 22px;
+            text-align: center;
+            color: white;
+            background-color: #315943;
+        }
+
+        @media (max-width: 750px) {
+            .paises {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .paises {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                padding: 8px;
+            }
+
+            section {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header>
+        <h1>
+            <font size="7" color="white">
+                Países del Mundo
+            </font>
+        </h1>
+
+        <p>
+            <font size="4" color="white">
+                Explora los continentes y conoce sus países.
+            </font>
+        </p>
+    </header>
+
+    <!-- MENU -->
+    <nav>
+        <a href="#inicio"><font size="3">Inicio</font></a>
+        <a href="#africa"><font size="3">África</font></a>
+        <a href="#america"><font size="3">América</font></a>
+        <a href="#asia"><font size="3">Asia</font></a>
+        <a href="#europa"><font size="3">Europa</font></a>
+        <a href="#oceania"><font size="3">Oceanía</font></a>
+        <a href="#antartida"><font size="3">Antártida</font></a>
+    </nav>
+
+    <main>
+
+        <!-- INICIO -->
+        <section id="inicio">
+            <h2>
+                <font size="5" color="#315943">
+                    Bienvenido
+                </font>
+            </h2>
+
+            <p>
+                <font size="3">
+                    Descubre países, capitales, idiomas, monedas
+                    y características de los continentes.
+                </font>
+            </p>
+
+            <div class="paises">
+
+                <article class="pais-card">
+                    <img src="ecuador.jpg" alt="Paisaje de Ecuador">
+
+                    <h3>
+                        <font size="5">Ecuador</font>
+                    </h3>
+
+                    <p><font size="3">Continente: América</font></p>
+                    <a class="boton" href="#america">
+                        <font size="3" color="white">Ver información</font>
+                    </a>
+                </article>
+
+                <article class="pais-card">
+                    <img src="egipto.jpg" alt="Pirámides de Egipto">
+
+                    <h3>
+                        <font size="5">Egipto</font>
+                    </h3>
+
+                    <p><font size="3">Continente: África</font></p>
+                    <a class="boton" href="#africa">
+                        <font size="3" color="white">Ver información</font>
+                    </a>
+                </article>
+
+                <article class="pais-card">
+                    <img src="japon.jpg" alt="Paisaje de Japón">
+
+                    <h3>
+                        <font size="5">Japón</font>
+                    </h3>
+
+                    <p><font size="3">Continente: Asia</font></p>
+                    <a class="boton" href="#asia">
+                        <font size="3" color="white">Ver información</font>
+                    </a>
+                </article>
+
+                <article class="pais-card">
+                    <img src="francia.jpg" alt="Paisaje de Francia">
+
+                    <h3>
+                        <font size="5">Francia</font>
+                    </h3>
+
+                    <p><font size="3">Continente: Europa</font></p>
+                    <a class="boton" href="#europa">
+                        <font size="3" color="white">Ver información</font>
+                    </a>
+                </article>
+
+                <article class="pais-card">
+                    <img src="australia.jpg" alt="Paisaje de Australia">
+
+                    <h3>
+                        <font size="5">Australia</font>
+                    </h3>
+
+                    <p><font size="3">Continente: Oceanía</font></p>
+                    <a class="boton" href="#oceania">
+                        <font size="3" color="white">Ver información</font>
+                    </a>
+                </article>
+
+                <article class="pais-card">
+                    <img src="antartida.jpg" alt="Paisaje de la Antártida">
+
+                    <h3>
+                        <font size="5">Antártida</font>
+                    </h3>
+
+                    <p><font size="3">Continente sin países soberanos</font></p>
+                    <a class="boton" href="#antartida">
+                        <font size="3" color="white">Ver información</font>
+                    </a>
+                </article>
+
+            </div>
+
+            <!-- TABLA DE PERIODICOS -->
+            <div class="noticias">
+                <h2>
+                    <font size="5">Periódicos y noticias</font>
+                </h2>
+
+                <p>
+                    <font size="3">
+                        Visita los siguientes periódicos para consultar
+                        noticias de diferentes países.
+                    </font>
+                </p>
+
+                <div class="tabla-scroll">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th><font size="3">País</font></th>
+                                <th><font size="3">Periódico</font></th>
+                                <th><font size="3">Sitio web</font></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <th rowspan="4">Ecuador</th>
+                                <td>El Universo</td>
+                                <td><a href="https://www.eluniverso.com/" target="_blank" rel="noopener noreferrer">Visitar</a></td>
+                            </tr>
+                            <tr>
+                                <td>Primicias</td>
+                                <td><a href="https://www.primicias.ec/" target="_blank" rel="noopener noreferrer">Visitar</a></td>
+                            </tr>
+                            <tr>
+                                <td>Ecuavisa</td>
+                                <td><a href="https://www.ecuavisa.com/" target="_blank" rel="noopener noreferrer">Visitar</a></td>
+                            </tr>
+                            <tr>
+                                <td>El Comercio</td>
+                                <td><a href="https://www.elcomercio.com/" target="_blank" rel="noopener noreferrer">Visitar</a></td>
+                            </tr>
+
+                            <tr>
+                                <th rowspan="2">Egipto</th>
+                                <td>Ahram Online</td>
+                                <td><a href="https://english.ahram.org.eg/" target="_blank" rel="noopener noreferrer">Visitar</a></td>
+                            </tr>
+                            <tr>
+                                <td>Daily News Egypt</td>
+                                <td><a href="https://www.dailynewsegypt.com/" target="_blank" rel="noopener noreferrer">Visitar</a></td>
+                            </tr>
+
+                            <tr>
+                                <th rowspan="3">Japón</th>
+                                <td>NHK World Japan</td>
+                                <td><a href="https://www3.nhk.or.jp/nhkworld/" target="_blank" rel="noopener noreferrer">Visitar</a></td>
+                            </tr>
+                            <tr>
+                                <td>The Japan Times</td>
+                                <td><a href="https://www.japantimes.co.jp/" target="_blank" rel="noopener noreferrer">Visitar</a></td>
+                            </tr>
+                            <tr>
+                                <td>Asahi Shimbun</td>
+                                <td><a href="https://www.asahi.com/ajw/" target="_blank" rel="noopener noreferrer">Visitar</a></td>
+                            </tr>
+
+                            <tr>
+                                <th rowspan="3">Francia</th>
+                                <td>Le Monde</td>
+                                <td><a href="https://www.lemonde.fr/" target="_blank" rel="noopener noreferrer">Visitar</a></td>
+                            </tr>
+                            <tr>
+                                <td>Le Figaro</td>
+                                <td><a href="https://www.lefigaro.fr/" target="_blank" rel="noopener noreferrer">Visitar</a></td>
+                            </tr>
+                            <tr>
+                                <td>France 24</td>
+                                <td><a href="https://www.france24.com/es/" target="_blank" rel="noopener noreferrer">Visitar</a></td>
+                            </tr>
+
+                            <tr>
+                                <th rowspan="2">Australia</th>
+                                <td>ABC News Australia</td>
+                                <td><a href="https://www.abc.net.au/news" target="_blank" rel="noopener noreferrer">Visitar</a></td>
+                            </tr>
+                            <tr>
+                                <td>The Guardian Australia</td>
+                                <td><a href="https://www.theguardian.com/au" target="_blank" rel="noopener noreferrer">Visitar</a></td>
+                            </tr>
+
+                            <tr>
+                                <th>Antártida</th>
+                                <td>Noticias científicas</td>
+                                <td><a href="https://news.google.com/search?q=Ant%C3%A1rtida" target="_blank" rel="noopener noreferrer">Consultar</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- AFRICA -->
+        <section id="africa">
+            <h2><font size="6">África</font></h2>
+
+            <img class="imagen-continente" src="egipto.jpg" alt="Pirámides de Egipto">
+
+            <h3><font size="5">Egipto</font></h3>
+
+            <div class="datos">
+                <p><font size="3"><b>Capital:</b> El Cairo</font></p>
+                <p><font size="3"><b>Idioma:</b> Árabe</font></p>
+                <p><font size="3"><b>Moneda:</b> Libra egipcia</font></p>
+                <p><font size="3">Egipto es conocido por sus pirámides, el río Nilo y su antigua civilización.</font></p>
+            </div>
+
+            <div class="lista-noticias">
+                <h3><font size="4">Noticias de Egipto</font></h3>
+                <a href="https://english.ahram.org.eg/" target="_blank" rel="noopener noreferrer">Ahram Online</a>
+                <a href="https://www.dailynewsegypt.com/" target="_blank" rel="noopener noreferrer">Daily News Egypt</a>
+            </div>
+        </section>
+
+        <!-- AMERICA -->
+        <section id="america">
+            <h2><font size="6">América</font></h2>
+
+            <img class="imagen-continente" src="ecuador.jpg" alt="Paisaje de Ecuador">
+
+            <h3><font size="5">Ecuador</font></h3>
+
+            <div class="datos">
+                <p><font size="3"><b>Capital:</b> Quito</font></p>
+                <p><font size="3"><b>Idioma:</b> Español</font></p>
+                <p><font size="3"><b>Moneda:</b> Dólar estadounidense</font></p>
+                <p><font size="3">Ecuador destaca por sus regiones Costa, Sierra, Amazonía e Insular.</font></p>
+            </div>
+
+            <div class="lista-noticias">
+                <h3><font size="4">Noticias de Ecuador</font></h3>
+                <a href="https://www.eluniverso.com/" target="_blank" rel="noopener noreferrer">El Universo</a>
+                <a href="https://www.primicias.ec/" target="_blank" rel="noopener noreferrer">Primicias</a>
+                <a href="https://www.ecuavisa.com/" target="_blank" rel="noopener noreferrer">Ecuavisa</a>
+                <a href="https://www.elcomercio.com/" target="_blank" rel="noopener noreferrer">El Comercio</a>
+            </div>
+        </section>
+
+        <!-- ASIA -->
+        <section id="asia">
+            <h2><font size="6">Asia</font></h2>
+
+            <img class="imagen-continente" src="japon.jpg" alt="Paisaje de Japón">
+
+            <h3><font size="5">Japón</font></h3>
+
+            <div class="datos">
+                <p><font size="3"><b>Capital:</b> Tokio</font></p>
+                <p><font size="3"><b>Idioma:</b> Japonés</font></p>
+                <p><font size="3"><b>Moneda:</b> Yen</font></p>
+                <p><font size="3">Japón combina tecnología, cultura, gastronomía y tradiciones.</font></p>
+            </div>
+
+            <div class="lista-noticias">
+                <h3><font size="4">Noticias de Japón</font></h3>
+                <a href="https://www3.nhk.or.jp/nhkworld/" target="_blank" rel="noopener noreferrer">NHK World Japan</a>
+                <a href="https://www.japantimes.co.jp/" target="_blank" rel="noopener noreferrer">The Japan Times</a>
+                <a href="https://www.asahi.com/ajw/" target="_blank" rel="noopener noreferrer">Asahi Shimbun</a>
+            </div>
+        </section>
+
+        <!-- EUROPA -->
+        <section id="europa">
+            <h2><font size="6">Europa</font></h2>
+
+            <img class="imagen-continente" src="francia.jpg" alt="Paisaje de Francia">
+
+            <h3><font size="5">Francia</font></h3>
+
+            <div class="datos">
+                <p><font size="3"><b>Capital:</b> París</font></p>
+                <p><font size="3"><b>Idioma:</b> Francés</font></p>
+                <p><font size="3"><b>Moneda:</b> Euro</font></p>
+                <p><font size="3">Francia es conocida por su historia, arte, gastronomía y monumentos.</font></p>
+            </div>
+
+            <div class="lista-noticias">
+                <h3><font size="4">Noticias de Francia</font></h3>
+                <a href="https://www.lemonde.fr/" target="_blank" rel="noopener noreferrer">Le Monde</a>
+                <a href="https://www.lefigaro.fr/" target="_blank" rel="noopener noreferrer">Le Figaro</a>
+                <a href="https://www.france24.com/es/" target="_blank" rel="noopener noreferrer">France 24 en Español</a>
+            </div>
+        </section>
+
+        <!-- OCEANIA -->
+        <section id="oceania">
+            <h2><font size="6">Oceanía</font></h2>
+
+            <img class="imagen-continente" src="australia.jpg" alt="Paisaje de Australia">
+
+            <h3><font size="5">Australia</font></h3>
+
+            <div class="datos">
+                <p><font size="3"><b>Capital:</b> Canberra</font></p>
+                <p><font size="3"><b>Idioma principal:</b> Inglés</font></p>
+                <p><font size="3"><b>Moneda:</b> Dólar australiano</font></p>
+                <p><font size="3">Australia destaca por sus paisajes, fauna y la Gran Barrera de Coral.</font></p>
+            </div>
+
+            <div class="lista-noticias">
+                <h3><font size="4">Noticias de Australia</font></h3>
+                <a href="https://www.abc.net.au/news" target="_blank" rel="noopener noreferrer">ABC News Australia</a>
+                <a href="https://www.theguardian.com/au" target="_blank" rel="noopener noreferrer">The Guardian Australia</a>
+            </div>
+        </section>
+
+        <!-- ANTARTIDA -->
+        <section id="antartida">
+            <h2><font size="6">Antártida</font></h2>
+
+            <img class="imagen-continente" src="antartida.jpg" alt="Paisaje de la Antártida">
+
+            <div class="datos">
+                <p><font size="3"><b>Capital:</b> No tiene capital.</font></p>
+                <p><font size="3"><b>Idioma:</b> No tiene idioma oficial.</font></p>
+                <p><font size="3"><b>Moneda:</b> No tiene moneda oficial.</font></p>
+                <p><font size="3">La Antártida está cubierta principalmente de hielo y no tiene países soberanos ni población permanente.</font></p>
+            </div>
+
+            <div class="lista-noticias">
+                <h3><font size="4">Noticias de la Antártida</font></h3>
+                <a href="https://news.google.com/search?q=Ant%C3%A1rtida" target="_blank" rel="noopener noreferrer">Noticias científicas</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PAGINA -->
+    <footer>
+        <p><font size="5"><b>Países del Mundo</b></font></p>
+        <p><font size="3">3ro B Informática</font></p>
+        <p><font size="3">Matías Valarezo</font></p>
+        <p><font size="2">Proyecto educativo sobre los continentes.</font></p>
+    </footer>
+
+</body>
+</html>
